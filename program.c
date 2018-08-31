@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <dirent.h>
 #include <string.h>
 #include <sys/stat.h>
@@ -12,7 +13,7 @@ const unsigned char* num2str(int);
 unsigned char* name[MAX];
 int main(int argc, char* argv[]){
     int i,j;
-    init(path);
+    init();
     if(argc==1){
         for(i=0;i<MAX-1;i++){
             if(name[i]==NULL)return 0;
