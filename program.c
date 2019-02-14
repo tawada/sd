@@ -5,12 +5,12 @@
 #include <string.h>
 #include <sys/stat.h>
  
-int isNum(const unsigned char*);
+int isNum(const char*);
 void init();
-const unsigned char* num2str(int);
+const char* num2str(int);
  
 #define MAX 1024
-unsigned char* name[MAX];
+char* name[MAX];
 int main(int argc, char* argv[]){
     int i,j;
     init();
@@ -39,7 +39,7 @@ int main(int argc, char* argv[]){
     }
     return 0;
 }
-int isNum(const unsigned char* str){
+int isNum(const char* str){
     while(*str!='\0'){
         if(*str<'0'||*str>'9')return 0;
         str++;
@@ -65,7 +65,7 @@ void init(){
     printf("warning:too many entry.\n");
     name[MAX-1]=NULL;
 }
-const unsigned char* num2str(int num){
+const char* num2str(int num){
     int i;
     for(i=0;i<=num;i++)
         if(name[i]==NULL)return NULL;
